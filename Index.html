@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForexMasterPro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="tools.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <h1>ForexToolPro</h1>
+                </div>
+                <nav class="nav-menu">
+                    <a href="#" class="active">Home</a>
+                    <a href="Index.html">Tools</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="#">Contact</a>
+                </nav>
+                          </div>
+        </div>
+    </header>
+
+    <div class="ticker-container">
+        <div class="ticker-wrap">
+            <div class="ticker"></div>
+        </div>
+    </div>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Unleash Your Trading Potential</h2>
+            <p>Access powerful forex trading tools designed for precision, risk management, and market analysis.</p>
+            <button class="btn" id="add-currency">
+                <i class="fas fa-plus"></i> Add New Currency Pair
+            </button>
+        </section>
+
+        <section class="categories">
+            <div class="category active" data-category="calculators">
+                <div class="category-header">
+                    <i class="fas fa-calculator"></i>
+                    <h2>Calculators</h2>
+                </div>
+                <ul class="tools-list">
+                    <li class="tool-item" data-tool="pip-calculator"><i class="fas fa-ruler"></i><span>Pip Value Calculator</span></li>
+                    <li class="tool-item" data-tool="position-calculator"><i class="fas fa-balance-scale"></i><span>Position Size Calculator</span></li>
+                    <li class="tool-item" data-tool="margin-calculator"><i class="fas fa-coins"></i><span>Margin Calculator</span></li>
+                    <li class="tool-item" data-tool="profit-calculator"><i class="fas fa-dollar-sign"></i><span>Profit Calculator</span></li>
+                </ul>
+            </div>
+            <div class="category" data-category="converters">
+                <div class="category-header">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h2>Converters</h2>
+                </div>
+                <ul class="tools-list">
+                    <li class="tool-item" data-tool="currency-converter"><i class="fas fa-money-bill-wave"></i><span>Currency Converter</span></li>
+                    <li class="tool-item" data-tool="lot-converter"><i class="fas fa-boxes"></i><span>Lot Size Converter</span></li>
+                    <li class="tool-item" data-tool="profit-converter"><i class="fas fa-hand-holding-usd"></i><span>Profit Converter</span></li>
+                    <li class="tool-item" data-tool="margin-converter"><i class="fas fa-wallet"></i><span>Margin Converter</span></li>
+                </ul>
+            </div>
+            <div class="category" data-category="market-analysis">
+                <div class="category-header">
+                    <i class="fas fa-chart-bar"></i>
+                    <h2>Market Analysis</h2>
+                </div>
+                <ul class="tools-list">
+                    <li class="tool-item" data-tool="pivot-calculator"><i class="fas fa-chart-line"></i><span>Pivot Point Calculator</span></li>
+                    <li class="tool-item" data-tool="fibonacci-calculator"><i class="fas fa-wave-square"></i><span>Fibonacci Calculator</span></li>
+                    <li class="tool-item" data-tool="correlation-matrix"><i class="fas fa-table"></i><span>Currency Correlation Matrix</span></li>
+                    <li class="tool-item" data-tool="volatility-calculator"><i class="fas fa-chart-area"></i><span>Volatility Calculator</span></li>
+                </ul>
+            </div>
+            <div class="category" data-category="risk-management">
+                <div class="category-header">
+                    <i class="fas fa-shield-alt"></i>
+                    <h2>Risk Management</h2>
+                </div>
+                <ul class="tools-list">
+                    <li class="tool-item" data-tool="risk-converter"><i class="fas fa-exclamation-triangle"></i><span>Risk Converter</span></li>
+                    <li class="tool-item" data-tool="risk-calculator"><i class="fas fa-calculator"></i><span>Risk Reward Calculator</span></li>
+                    <li class="tool-item" data-tool="drawdown-calculator"><i class="fas fa-chart-line"></i><span>Drawdown Calculator</span></li>
+                    <li class="tool-item" data-tool="position-ratio"><i class="fas fa-balance-scale"></i><span>Position Ratio</span></li>
+                </ul>
+            </div>
+            <div class="category" data-category="strategy-tools">
+                <div class="category-header">
+                    <i class="fas fa-chess"></i>
+                    <h2>Trading Strategy Tools</h2>
+                </div>
+                <ul class="tools-list">
+                    <li class="tool-item" data-tool="strategy-backtest"><i class="fas fa-history"></i><span>Strategy Backtest Calculator</span></li>
+                    <li class="tool-item" data-tool="trade-entry-planner"><i class="fas fa-sign-in-alt"></i><span>Trade Entry Planner</span></li>
+                    <li class="tool-item" data-tool="breakout-analyzer"><i class="fas fa-rocket"></i><span>Breakout Strength Analyzer</span></li>
+                    <li class="tool-item" data-tool="trade-journal"><i class="fas fa-book"></i><span>Trade Journal Analyzer</span></li>
+                </ul>
+            </div>
+            <div class="category" data-category="economic-tools">
+                <div class="category-header">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h2>Economic Calendar & News Tools</h2>
+                </div>
+                <ul class="tools-list">
+                    <li class="tool-item" data-tool="economic-impact"><i class="fas fa-bolt"></i><span>Economic Event Impact Calculator</span></li>
+                    <li class="tool-item" data-tool="news-sentiment"><i class="fas fa-newspaper"></i><span>News Sentiment Analyzer</span></li>
+                    <li class="tool-item" data-tool="interest-rate"><i class="fas fa-percent"></i><span>Interest Rate Differential Calculator</span></li>
+                    <li class="tool-item" data-tool="economic-calendar"><i class="fas fa-filter"></i><span>Economic Calendar Filter</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="tools-container">
+            <div class="tool-content active" id="pip-calculator">
+                <div class="tool-header">
+                    <i class="fas fa-ruler"></i>
+                    <h2>Pip Value Calculator</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Currency Pairs</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-pip" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-pip"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-pip"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="currency-pair">Currency Pair</label>
+                        <select id="currency-pair"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="trade-size">Trade Size (Lots)</label>
+                        <input type="number" id="trade-size" value="1" min="0.01" step="0.01">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-pip"><i class="fas fa-calculator"></i> Calculate Pip Value</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Pip Value:</span>
+                        <span class="result-value" id="pip-value-result">$0.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="position-calculator">
+                <div class="tool-header">
+                    <i class="fas fa-balance-scale"></i>
+                    <h2>Position Size Calculator</h2>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="account-balance">Account Balance ($)</label>
+                        <input type="number" id="account-balance" value="10000" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="risk-percentage">Risk Percentage (%)</label>
+                        <input type="number" id="risk-percentage" value="1" min="0" max="100" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="stop-loss">Stop Loss (Pips)</label>
+                        <input type="number" id="stop-loss" value="50" min="1">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-position"><i class="fas fa-calculator"></i> Calculate Position Size</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Position Size:</span>
+                        <span class="result-value" id="position-size-result">0 Lots</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Risk Amount:</span>
+                        <span class="result-value" id="risk-amount-result">$0.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="margin-calculator">
+                <div class="tool-header">
+                    <i class="fas fa-coins"></i>
+                    <h2>Margin Calculator</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Currency Pairs</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-margin" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-margin"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-margin"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="margin-currency-pair">Currency Pair</label>
+                        <select id="margin-currency-pair"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="margin-trade-size">Trade Size (Lots)</label>
+                        <input type="number" id="margin-trade-size" value="1" min="0.01" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="margin-leverage">Leverage</label>
+                        <input type="number" id="margin-leverage" value="100" min="1">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-margin"><i class="fas fa-calculator"></i> Calculate Margin</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Margin Required:</span>
+                        <span class="result-value" id="margin-required-result">$0.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="profit-calculator">
+                <div class="tool-header">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h2>Profit Calculator</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Currency Pairs</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-profit" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-profit"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-profit"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="profit-currency-pair">Currency Pair</label>
+                        <select id="profit-currency-pair"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="profit-trade-size">Trade Size (Lots)</label>
+                        <input type="number" id="profit-trade-size" value="1" min="0.01" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="profit-entry-price">Entry Price</label>
+                        <input type="number" id="profit-entry-price" value="1.1000" step="0.0001">
+                    </div>
+                    <div class="form-group">
+                        <label for="profit-exit-price">Exit Price</label>
+                        <input type="number" id="profit-exit-price" value="1.1050" step="0.0001">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-profit"><i class="fas fa-calculator"></i> Calculate Profit</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Profit/Loss:</span>
+                        <span class="result-value" id="profit-result">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Pips:</span>
+                        <span class="result-value" id="pips-result">0 pips</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="currency-converter">
+                <div class="tool-header">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h2>Currency Converter</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Currencies</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-converter" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-converter"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-converter"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="from-currency">From Currency</label>
+                        <select id="from-currency"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="to-currency">To Currency</label>
+                        <select id="to-currency"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" value="1000" min="0">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="convert-currency"><i class="fas fa-exchange-alt"></i> Convert Currency</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Converted Amount:</span>
+                        <span class="result-value" id="conversion-result">0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Exchange Rate:</span>
+                        <span class="result-value" id="exchange-rate">1 = 0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="lot-converter">
+                <div class="tool-header">
+                    <i class="fas fa-boxes"></i>
+                    <h2>Lot Size Converter</h2>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="lot-amount">Amount</label>
+                        <input type="number" id="lot-amount" value="1" min="0.01" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="from-lot-type">From Lot Type</label>
+                        <select id="from-lot-type">
+                            <option value="standard">Standard</option>
+                            <option value="mini">Mini</option>
+                            <option value="micro">Micro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="to-lot-type">To Lot Type</label>
+                        <select id="to-lot-type">
+                            <option value="standard">Standard</option>
+                            <option value="mini">Mini</option>
+                            <option value="micro">Micro</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-block" id="convert-lot"><i class="fas fa-exchange-alt"></i> Convert Lot Size</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Converted Lot Size:</span>
+                        <span class="result-value" id="lot-conversion-result">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Units:</span>
+                        <span class="result-value" id="units-result">0 units</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="profit-converter">
+                <div class="tool-header">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h2>Profit Converter</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Currencies</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-profit-converter" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-profit-converter"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-profit-converter"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="profit-amount">Profit Amount</label>
+                        <input type="number" id="profit-amount" value="1000" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="profit-base-currency">Base Currency</label>
+                        <select id="profit-base-currency"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="profit-target-currency">Target Currency</label>
+                        <select id="profit-target-currency"></select>
+                    </div>
+                </div>
+                <button class="btn btn-block" id="convert-profit"><i class="fas fa-exchange-alt"></i> Convert Profit</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Converted Profit:</span>
+                        <span class="result-value" id="profit-conversion-result">0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Exchange Rate:</span>
+                        <span class="result-value" id="profit-exchange-rate">1 = 0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="margin-converter">
+                <div class="tool-header">
+                    <i class="fas fa-wallet"></i>
+                    <h2>Margin Converter</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Currencies</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-margin-converter" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-margin-converter"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-margin-converter"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="margin-amount">Margin Amount</label>
+                        <input type="number" id="margin-amount" value="1000" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="margin-original-currency">Original Currency</label>
+                        <select id="margin-original-currency"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="margin-target-currency">Target Currency</label>
+                        <select id="margin-target-currency"></select>
+                    </div>
+                </div>
+                <button class="btn btn-block" id="convert-margin"><i class="fas fa-exchange-alt"></i> Convert Margin</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Converted Margin:</span>
+                        <span class="result-value" id="margin-conversion-result">0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Exchange Rate:</span>
+                        <span class="result-value" id="margin-exchange-rate">1 = 0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="pivot-calculator">
+                <div class="tool-header">
+                    <i class="fas fa-chart-line"></i>
+                    <h2>Pivot Point Calculator</h2>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="pivot-high">High Price</label>
+                        <input type="number" id="pivot-high" value="1.2000" step="0.0001">
+                    </div>
+                    <div class="form-group">
+                        <label for="pivot-low">Low Price</label>
+                        <input type="number" id="pivot-low" value="1.1800" step="0.0001">
+                    </div>
+                    <div class="form-group">
+                        <label for="pivot-close">Close Price</label>
+                        <input type="number" id="pivot-close" value="1.1900" step="0.0001">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-pivot"><i class="fas fa-calculator"></i> Calculate Pivot Points</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Pivot Point:</span>
+                        <span class="result-value" id="pivot-point-result">0.0000</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Resistance 1:</span>
+                        <span class="result-value" id="pivot-r1-result">0.0000</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Support 1:</span>
+                        <span class="result-value" id="pivot-s1-result">0.0000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="fibonacci-calculator">
+                <div class="tool-header">
+                    <i class="fas fa-wave-square"></i>
+                    <h2>Fibonacci Calculator</h2>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="fib-high">High Price</label>
+                        <input type="number" id="fib-high" value="1.2000" step="0.0001">
+                    </div>
+                    <div class="form-group">
+                        <label for="fib-low">Low Price</label>
+                        <input type="number" id="fib-low" value="1.1800" step="0.0001">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-fibonacci"><i class="fas fa-calculator"></i> Calculate Fibonacci Levels</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>23.6% Level:</span>
+                        <span class="result-value" id="fib-23-result">0.0000</span>
+                    </div>
+                    <div class="result-item">
+                        <span>38.2% Level:</span>
+                        <span class="result-value" id="fib-38-result">0.0000</span>
+                    </div>
+                    <div class="result-item">
+                        <span>50% Level:</span>
+                        <span class="result-value" id="fib-50-result">0.0000</span>
+                    </div>
+                    <div class="result-item">
+                        <span>61.8% Level:</span>
+                        <span class="result-value" id="fib-61-result">0.0000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="correlation-matrix">
+                <div class="tool-header">
+                    <i class="fas fa-table"></i>
+                    <h2>Currency Correlation Matrix</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Currency Pairs</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-correlation" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-correlation"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-correlation"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="correlation-pair1">Currency Pair 1</label>
+                        <select id="correlation-pair1"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="correlation-pair2">Currency Pair 2</label>
+                        <select id="correlation-pair2"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="correlation-period">Period</label>
+                        <select id="correlation-period">
+                            <option value="1h">1 Hour</option>
+                            <option value="1d">1 Day</option>
+                            <option value="1w">1 Week</option>
+                            <option value="1m">1 Month</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-correlation"><i class="fas fa-calculator"></i> Calculate Correlation</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Correlation Coefficient:</span>
+                        <span class="result-value" id="correlation-result">0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Correlation Strength:</span>
+                        <span class="result-value" id="correlation-strength-result">N/A</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="volatility-calculator">
+                <div class="tool-header">
+                    <i class="fas fa-chart-area"></i>
+                    <h2>Volatility Calculator</h2>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="high-price">High Price</label>
+                        <input type="number" id="high-price" value="1.2000" step="0.0001">
+                    </div>
+                    <div class="form-group">
+                        <label for="low-price">Low Price</label>
+                        <input type="number" id="low-price" value="1.1800" step="0.0001">
+                    </div>
+                    <div class="form-group">
+                        <label for="period">Period (Days)</label>
+                        <input type="number" id="period" value="7" min="1">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-volatility"><i class="fas fa-calculator"></i> Calculate Volatility</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Price Range:</span>
+                        <span class="result-value" id="price-range">0.0000</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Volatility (Pips):</span>
+                        <span class="result-value" id="volatility-pips">0 pips</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Volatility (%):</span>
+                        <span class="result-value" id="volatility-percentage">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="risk-converter">
+                <div class="tool-header">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h2>Risk Converter</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Account Currency</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-risk-converter" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-risk-converter"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-risk-converter"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="risk-amount">Risk Amount</label>
+                        <input type="number" id="risk-amount" value="100" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="risk-percentage-converter">Risk Percentage (%)</label>
+                        <input type="number" id="risk-percentage-converter" value="1" min="0" max="100" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="risk-currency">Account Currency</label>
+                        <select id="risk-currency"></select>
+                    </div>
+                </div>
+                <button class="btn btn-block" id="convert-risk"><i class="fas fa-exchange-alt"></i> Calculate Risk</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Account Size:</span>
+                        <span class="result-value" id="account-size-result">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Risk Percentage:</span>
+                        <span class="result-value" id="risk-percentage-result">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="risk-calculator">
+                <div class="tool-header">
+                    <i class="fas fa-calculator"></i>
+                    <h2>Risk Reward Calculator</h2>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="risk-amount-ratio">Risk Amount ($)</label>
+                        <input type="number" id="risk-amount-ratio" value="100" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="reward-amount">Reward Amount ($)</label>
+                        <input type="number" id="reward-amount" value="300" min="0">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-risk-reward"><i class="fas fa-calculator"></i> Calculate Risk-Reward</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Risk-Reward Ratio:</span>
+                        <span class="result-value" id="risk-reward-result">1:0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="drawdown-calculator">
+                <div class="tool-header">
+                    <i class="fas fa-chart-line"></i>
+                    <h2>Drawdown Calculator</h2>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="initial-balance">Initial Balance ($)</label>
+                        <input type="number" id="initial-balance" value="10000" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="current-balance">Current Balance ($)</label>
+                        <input type="number" id="current-balance" value="9000" min="0">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-drawdown"><i class="fas fa-calculator"></i> Calculate Drawdown</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Drawdown Amount:</span>
+                        <span class="result-value" id="drawdown-amount-result">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Drawdown Percentage:</span>
+                        <span class="result-value" id="drawdown-percentage-result">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="position-ratio">
+                <div class="tool-header">
+                    <i class="fas fa-balance-scale"></i>
+                    <h2>Position Ratio</h2>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="total-account">Total Account Balance ($)</label>
+                        <input type="number" id="total-account" value="10000" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="position-size">Position Size ($)</label>
+                        <input type="number" id="position-size" value="1000" min="0">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-position-ratio"><i class="fas fa-calculator"></i> Calculate Position Ratio</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Position Ratio:</span>
+                        <span class="result-value" id="position-ratio-result">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="strategy-backtest">
+                <div class="tool-header">
+                    <i class="fas fa-history"></i>
+                    <h2>Strategy Backtest Calculator</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Account Currency</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-strategy-backtest" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-strategy-backtest"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-strategy-backtest"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="win-rate">Win Rate (%)</label>
+                        <input type="number" id="win-rate" value="60" min="0" max="100" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="avg-profit">Average Profit per Win</label>
+                        <input type="number" id="avg-profit" value="100" min="0" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="avg-loss">Average Loss per Loss</label>
+                        <input type="number" id="avg-loss" value="50" min="0" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="num-trades">Number of Trades</label>
+                        <input type="number" id="num-trades" value="100" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="initial-capital">Initial Capital</label>
+                        <input type="number" id="initial-capital" value="10000" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="account-currency">Account Currency</label>
+                        <select id="account-currency"></select>
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-strategy-backtest"><i class="fas fa-calculator"></i> Calculate Backtest</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Expected Profit/Loss:</span>
+                        <span class="result-value" id="backtest-profit-result">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Win/Loss Ratio:</span>
+                        <span class="result-value" id="backtest-ratio-result">0:0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Total Return:</span>
+                        <span class="result-value" id="backtest-return-result">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="trade-entry-planner">
+                <div class="tool-header">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <h2>Trade Entry Planner</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Currency Pairs</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-trade-entry" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-trade-entry"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-trade-entry"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="entry-currency-pair">Currency Pair</label>
+                        <select id="entry-currency-pair"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="entry-price">Entry Price</label>
+                        <input type="number" id="entry-price" value="1.1000" step="0.0001">
+                    </div>
+                    <div class="form-group">
+                        <label for="stop-loss-price">Stop Loss Price</label>
+                        <input type="number" id="stop-loss-price" value="1.0950" step="0.0001">
+                    </div>
+                    <div class="form-group">
+                        <label for="risk-reward-ratio">Target Risk-Reward Ratio</label>
+                        <input type="number" id="risk-reward-ratio" value="2" min="0.1" step="0.1">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-trade-entry"><i class="fas fa-calculator"></i> Plan Trade Entry</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Target Price:</span>
+                        <span class="result-value" id="target-price-result">0.0000</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Potential Profit:</span>
+                        <span class="result-value" id="potential-profit-result">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Risk Amount:</span>
+                        <span class="result-value" id="entry-risk-result">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Position Size:</span>
+                        <span class="result-value" id="entry-position-result">0 Lots</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="breakout-analyzer">
+                <div class="tool-header">
+                    <i class="fas fa-rocket"></i>
+                    <h2>Breakout Strength Analyzer</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Currency Pairs</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-breakout" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-breakout"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-breakout"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="breakout-currency-pair">Currency Pair</label>
+                        <select id="breakout-currency-pair"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="breakout-price">Breakout Price</label>
+                        <input type="number" id="breakout-price" value="1.2000" step="0.0001">
+                    </div>
+                    <div class="form-group">
+                        <label for="historical-high">Historical High</label>
+                        <input type="number" id="historical-high" value="1.1950" step="0.0001">
+                    </div>
+                    <div class="form-group">
+                        <label for="historical-low">Historical Low</label>
+                        <input type="number" id="historical-low" value="1.1800" step="0.0001">
+                    </div>
+                    <div class="form-group">
+                        <label for="breakout-period">Period (Days)</label>
+                        <input type="number" id="breakout-period" value="7" min="1">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-breakout"><i class="fas fa-calculator"></i> Analyze Breakout</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Breakout Strength Score:</span>
+                        <span class="result-value" id="breakout-strength-result">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Continuation Probability:</span>
+                        <span class="result-value" id="continuation-probability-result">0%</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Suggested Stop Loss:</span>
+                        <span class="result-value" id="breakout-stop-loss-result">0 pips</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="trade-journal">
+                <div class="tool-header">
+                    <i class="fas fa-book"></i>
+                    <h2>Trade Journal Analyzer</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Currency Pairs</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-trade-journal" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-trade-journal"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-trade-journal"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="journal-currency-pair">Currency Pair</label>
+                        <select id="journal-currency-pair"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="total-trades">Total Trades</label>
+                        <input type="number" id="total-trades" value="100" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="profitable-trades">Profitable Trades</label>
+                        <input type="number" id="profitable-trades" value="60" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="journal-avg-profit">Average Profit per Trade</label>
+                        <input type="number" id="journal-avg-profit" value="100" min="0" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="journal-avg-loss">Average Loss per Trade</label>
+                        <input type="number" id="journal-avg-loss" value="50" min="0" step="0.01">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-journal"><i class="fas fa-calculator"></i> Analyze Journal</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Success Rate:</span>
+                        <span class="result-value" id="journal-success-result">0%</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Net Profit:</span>
+                        <span class="result-value" id="journal-profit-result">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Recommendation:</span>
+                        <span class="result-value" id="journal-recommendation-result">N/A</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="economic-impact">
+                <div class="tool-header">
+                    <i class="fas fa-bolt"></i>
+                    <h2>Economic Event Impact Calculator</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Currency Pairs</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-economic-impact" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-economic-impact"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-economic-impact"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="economic-pair">Currency Pair</label>
+                        <select id="economic-pair"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-type">Event Type</label>
+                        <select id="event-type">
+                            <option value="nfp">Non-Farm Payroll</option>
+                            <option value="interest-rate">Interest Rate Decision</option>
+                            <option value="gdp">GDP Release</option>
+                            <option value="cpi">CPI (Inflation)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="expected-data">Expected Data (%)</label>
+                        <input type="number" id="expected-data" value="0.5" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="actual-data">Actual Data (%)</label>
+                        <input type="number" id="actual-data" value="0.7" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="volatility-factor">Volatility Factor (1-10)</label>
+                        <input type="number" id="volatility-factor" value="5" min="1" max="10">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-economic-impact"><i class="fas fa-calculator"></i> Calculate Impact</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Estimated Pip Movement:</span>
+                        <span class="result-value" id="impact-pips-result">0 pips</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Suggested Risk Level:</span>
+                        <span class="result-value" id="impact-risk-result">Moderate</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Event Impact Score:</span>
+                        <span class="result-value" id="impact-score-result">0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="news-sentiment">
+                <div class="tool-header">
+                    <i class="fas fa-newspaper"></i>
+                    <h2>News Sentiment Analyzer</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Currency Pairs</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-news-sentiment" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-news-sentiment"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-news-sentiment"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="news-currency-pair">Currency Pair</label>
+                        <select id="news-currency-pair"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="news-headline">News Headline</label>
+                        <textarea id="news-headline" rows="4" placeholder="Enter news headline..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="sentiment-weight">Sentiment Weight</label>
+                        <select id="sentiment-weight">
+                            <option value="positive">Positive</option>
+                            <option value="negative">Negative</option>
+                            <option value="neutral">Neutral</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="news-timeframe">Timeframe</label>
+                        <select id="news-timeframe">
+                            <option value="1h">1 Hour</option>
+                            <option value="1d">1 Day</option>
+                            <option value="1w">1 Week</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-news-sentiment"><i class="fas fa-calculator"></i> Analyze Sentiment</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Sentiment Score:</span>
+                        <span class="result-value" id="sentiment-score-result">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Predicted Direction:</span>
+                        <span class="result-value" id="sentiment-direction-result">N/A</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Confidence Level:</span>
+                        <span class="result-value" id="sentiment-confidence-result">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="interest-rate">
+                <div class="tool-header">
+                    <i class="fas fa-percent"></i>
+                    <h2>Interest Rate Differential Calculator</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Currency Pairs</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-interest-rate" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-interest-rate"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-interest-rate"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="interest-currency-pair">Currency Pair</label>
+                        <select id="interest-currency-pair"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="base-interest-rate">Base Currency Interest Rate (%)</label>
+                        <input type="number" id="base-interest-rate" value="2.5" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-interest-rate">Quote Currency Interest Rate (%)</label>
+                        <input type="number" id="quote-interest-rate" value="1.5" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="interest-trade-size">Trade Size (Lots)</label>
+                        <input type="number" id="interest-trade-size" value="1" min="0.01" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="holding-period">Holding Period (Days)</label>
+                        <input type="number" id="holding-period" value="30" min="1">
+                    </div>
+                </div>
+                <button class="btn btn-block" id="calculate-interest-rate"><i class="fas fa-calculator"></i> Calculate Interest</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Daily Interest:</span>
+                        <span class="result-value" id="daily-interest-result">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Weekly Interest:</span>
+                        <span class="result-value" id="weekly-interest-result">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Annualized Return:</span>
+                        <span class="result-value" id="annualized-return-result">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-content" id="economic-calendar">
+                <div class="tool-header">
+                    <i class="fas fa-filter"></i>
+                    <h2>Economic Calendar Filter</h2>
+                </div>
+                <div class="currency-selection-box">
+                    <h3>Select Currencies</h3>
+                    <div class="form-group">
+                        <select id="preferred-pairs-economic-calendar" multiple size="5"></select>
+                    </div>
+                    <button class="btn" id="add-currency-from-economic-calendar"><i class="fas fa-plus"></i> Add New Currency Pair</button>
+                    <button class="btn btn-block" id="save-preferences-economic-calendar"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="calendar-currency">Currency</label>
+                        <select id="calendar-currency"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="impact-level">Impact Level</label>
+                        <select id="impact-level">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date-range">Date Range</label>
+                        <select id="date-range">
+                            <option value="today">Today</option>
+                            <option value="this-week">This Week</option>
+                            <option value="this-month">This Month</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-block" id="filter-calendar"><i class="fas fa-filter"></i> Filter Events</button>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Upcoming Events:</span>
+                        <span class="result-value" id="calendar-events-result">None</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Market Impact:</span>
+                        <span class="result-value" id="calendar-impact-result">N/A</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Trading Window:</span>
+                        <span class="result-value" id="calendar-window-result">N/A</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-posts">
+            <div class="blog-post">
+                <h2>Mastering Forex Trading with Precision Tools</h2>
+                <div class="blog-meta">
+                    <span><i class="fas fa-user"></i>Saim Tahir</span>
+                    <span><i class="fas fa-calendar"></i> August 20, 2025</span>
+                </div>
+                <div class="blog-content">
+                    <p>Learn how to leverage ForexMasterPro's advanced calculators to optimize your trading strategy.</p>
+                    <h3>Why Use Trading Tools?</h3>
+                    <p>Tools like pip calculators and margin converters help traders make informed decisions...</p>
+                </div>
+            </div>
+            <div class="blog-post">
+                <h2>Understanding Market Volatility</h2>
+                <div class="blog-meta">
+                    <span><i class="fas fa-user"></i>Saim Tahir</span>
+                    <span><i class="fas fa-calendar"></i> August 18, 2025</span>
+                </div>
+                <div class="blog-content">
+                    <p>Volatility is a key factor in forex trading. Discover how our volatility calculator can help...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="add-currency-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Currency Pair</h2>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="form-group">
+                <label for="new-currency-pair">Currency Pair (e.g., USD/INR)</label>
+                <input type="text" id="new-currency-pair" placeholder="USD/INR">
+            </div>
+            <div class="form-group">
+                <label for="new-exchange-rate">Exchange Rate</label>
+                <input type="number" id="new-exchange-rate" placeholder="Enter exchange rate" step="0.0001">
+            </div>
+            <button class="btn btn-block" id="save-currency"><i class="fas fa-save"></i> Save Currency Pair</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ForexMasterPro. All rights reserved.</p>
+    </footer>
+
+    <script src="tools.js"></script>
+</body>
+</html>
