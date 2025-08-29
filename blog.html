@@ -5,7 +5,295 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ForexMasterPro - Blog</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="tools.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2962ff;
+            --primary-dark: #0039cb;
+            --secondary: #ff6d00;
+            --dark-bg: #121212;
+            --dark-card: #1e1e1e;
+            --darker-card: #252525;
+            --text: #ffffff; /* White text for dark backgrounds */
+            --text-muted: #b0b0b0;
+            --success: #00c853;
+            --danger: #ff1744;
+            --warning: #ffab00;
+            --info: #00b0ff;
+            --light-bg: rgba(255, 255, 255, 0.07); /* Light background for inputs */
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: var(--text); /* White text for body */
+            min-height: 100vh;
+            padding-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--dark-card);
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 28px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: var(--text); /* White text for navigation */
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .nav-menu a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .developer {
+            font-size: 14px;
+            color: var(--text-muted); /* Light gray text for developer credit */
+            text-align: right;
+        }
+
+        .developer span {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 0 30px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .hero p {
+            color: var(--text-muted); /* Light gray text for hero description */
+            max-width: 700px;
+            margin: 0 auto 25px;
+            font-size: 18px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .blog-post {
+            background: var(--dark-card);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .blog-post h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text); /* White text for post title */
+            margin-bottom: 10px;
+        }
+
+        .blog-post .meta {
+            color: var(--text-muted); /* Light gray text for meta */
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .blog-post .excerpt {
+            color: var(--text-muted); /* Light gray text for excerpt */
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .blog-post .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .blog-post .read-more:hover {
+            color: var(--primary-dark);
+        }
+
+        .filter-container {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .filter-container label {
+            color: var(--text-muted); /* Light gray text for label */
+            font-weight: 500;
+        }
+
+        .filter-container select {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #000000; /* Black text for light background */
+            font-size: 16px;
+        }
+
+        .filter-container select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .post-content {
+            background: var(--dark-card);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid transparent;
+            display: none;
+        }
+
+        .post-content.active {
+            display: block;
+        }
+
+        .post-content h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text); /* White text for post title */
+            margin-bottom: 15px;
+        }
+
+        .post-content .meta {
+            color: var(--text-muted); /* Light gray text for meta */
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .post-content p {
+            color: var(--text); /* White text for post content */
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-dark);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-muted); /* Light gray text for footer */
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .developer {
+                text-align: center;
+            }
+            
+            .hero h2 {
+                font-size: 28px;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .post-content h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -15,7 +303,7 @@
                 <h1>ForexMasterPro</h1>
             </div>
             <div class="nav-menu">
-                <a href="Index.html">Home</a>
+                <a href="index.html">Home</a>
                 <a href="blog.html" class="active">Blog</a>
             </div>
             <div class="developer">
@@ -24,57 +312,20 @@
         </div>
     </header>
 
-    <div class="ticker-container">
-        <div class="ticker-wrap">
-            <div class="ticker">
-                <!-- Ticker items will be populated by JavaScript -->
-            </div>
-        </div>
-    </div>
-
     <div class="container">
         <div class="hero">
-            <h2>Forex Trading Insights</h2>
-            <p>Stay informed with expert tips, strategies, and market analysis to enhance your trading journey.</p>
+            <h2>ForexMasterPro Blog</h2>
+            <p>Insights, tips, and strategies for successful forex trading</p>
         </div>
 
-        <div class="blog-posts">
-            <article class="blog-post">
-                <h2>Key Risk Management Strategies for Forex Trading</h2>
-                <div class="blog-meta">
-                    <span><i class="fas fa-calendar-alt"></i> August 28, 2025</span>
-                    <span><i class="fas fa-user"></i> Saim Tahir</span>
-                </div>
-                <div class="blog-content">
-                    <p>Forex trading offers significant opportunities but comes with inherent risks. Effective risk management is crucial for long-term success. Here are three key strategies to protect your capital:</p>
-                    <h3>1. Position Sizing</h3>
-                    <p>Position sizing determines how much of your account you risk on a single trade. A common rule is to risk no more than 1-2% of your account balance per trade. For example, with a $10,000 account, risking 1% means a maximum loss of $100 per trade. Use our Position Size Calculator to determine the appropriate lot size based on your account balance, risk percentage, and stop-loss distance.</p>
-                    <h3>2. Setting Stop-Loss Orders</h3>
-                    <p>A stop-loss order automatically closes a trade when the price reaches a predetermined level, limiting your losses. Always set a stop-loss based on technical levels, such as support or resistance, rather than arbitrary values. For instance, if trading EUR/USD, you might place a stop-loss 50 pips below a key support level.</p>
-                    <h3>3. Risk-Reward Ratio</h3>
-                    <p>The risk-reward ratio measures potential profit against potential loss. A ratio of 1:3 means you risk $1 to potentially gain $3. Aim for trades with a minimum risk-reward ratio of 1:2 to ensure that winning trades outweigh losses over time. Our Risk Reward Ratio Calculator can help you evaluate trade setups.</p>
-                    <p>By implementing these strategies, you can trade with confidence and protect your capital from significant drawdowns. Explore our Risk Management tools for practical support.</p>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2>Understanding Technical Analysis in Forex Trading</h2>
-                <div class="blog-meta">
-                    <span><i class="fas fa-calendar-alt"></i> August 28, 2025</span>
-                    <span><i class="fas fa-user"></i> Saim Tahir</span>
-                </div>
-                <div class="blog-content">
-                    <p>Technical analysis is a cornerstone of forex trading, helping traders predict price movements based on historical data. Here’s a brief overview of key concepts:</p>
-                    <h3>1. Chart Patterns</h3>
-                    <p>Chart patterns, such as head and shoulders, triangles, or double tops, indicate potential reversals or continuations in price trends. For example, a bullish triangle pattern on GBP/USD may signal an upcoming upward breakout. Recognizing these patterns can guide entry and exit points.</p>
-                    <h3>2. Technical Indicators</h3>
-                    <p>Indicators like Moving Averages, Relative Strength Index (RSI), and MACD provide insights into market momentum and trends. For instance, an RSI above 70 may indicate an overbought condition, suggesting a potential reversal. Use our Volatility Calculator to assess market conditions.</p>
-                    <h3>3. Fibonacci Retracement</h3>
-                    <p>Fibonacci retracement levels (23.6%, 38.2%, 50%, 61.8%) help identify potential support and resistance zones. For example, if EUR/USD rises from 1.1000 to 1.1500, the 38.2% retracement level at 1.1191 could act as support. Our Fibonacci Calculator simplifies this analysis.</p>
-                    <p>Mastering technical analysis requires practice and the right tools. Start with our Market Analysis suite to apply these concepts to your trading strategy.</p>
-                </div>
-            </article>
+        <div class="blog-grid">
+            <!-- Blog posts will be populated dynamically by JavaScript -->
         </div>
+
+        <div class="post-content" id="post-content">
+            <!-- Full post content will be populated dynamically -->
+        </div>
+        <a href="#" class="back-link" id="back-link" style="display: none;"><i class="fas fa-arrow-left"></i> Back to Posts</a>
     </div>
 
     <footer>
@@ -83,6 +334,148 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sample blog posts data (simulating a backend)
+            const blogPosts = [
+                {
+                    id: 1,
+                    title: 'Top 5 Forex Trading Strategies for Beginners',
+                    category: 'Beginner',
+                    excerpt: 'Learn the best trading strategies to kickstart your forex journey, including trend following and breakout techniques...',
+                    content: 'This post covers five essential forex trading strategies for beginners, including trend following, breakout trading, scalping, swing trading, and position trading. Each strategy is explained with practical examples and tips for implementation.',
+                    date: '2025-08-01'
+                },
+                {
+                    id: 2,
+                    title: 'Understanding Pip Values and Lot Sizes',
+                    category: 'Beginner',
+                    excerpt: 'A deep dive into calculating pip values and choosing the right lot size for your trading style...',
+                    content: 'Pip values and lot sizes are critical concepts in forex trading. This article explains how to calculate pip values for different currency pairs and how to choose appropriate lot sizes based on your account size and risk tolerance.',
+                    date: '2025-08-05'
+                },
+                {
+                    id: 3,
+                    title: 'How to Manage Risk in Forex Trading',
+                    category: 'Risk Management',
+                    excerpt: 'Discover essential risk management techniques to protect your capital and improve trading consistency...',
+                    content: 'Risk management is the cornerstone of successful forex trading. Learn about position sizing, stop-loss orders, and risk-reward ratios to protect your capital and achieve consistent results.',
+                    date: '2025-08-10'
+                },
+                {
+                    id: 4,
+                    title: 'The Impact of Economic Events on Forex Markets',
+                    category: 'Market Analysis',
+                    excerpt: 'Explore how major economic events like interest rate decisions affect currency pairs...',
+                    content: 'Economic events such as GDP releases, interest rate decisions, and employment reports can significantly impact forex markets. This post analyzes their effects and provides strategies for trading around these events.',
+                    date: '2025-08-15'
+                }
+            ];
+
+            // Initialize blog page
+            initBlog();
+
+            function initBlog() {
+                // Add category filter
+                const categories = ['All', 'Beginner', 'Risk Management', 'Market Analysis'];
+                const filterContainer = document.createElement('div');
+                filterContainer.className = 'filter-container';
+                filterContainer.innerHTML = `
+                    <label for="category-filter">Filter by Category:</label>
+                    <select id="category-filter">
+                        ${categories.map(category => `<option value="${category}">${category}</option>`).join('')}
+                    </select>
+                `;
+                document.querySelector('.hero').insertAdjacentElement('afterend', filterContainer);
+
+                // Render initial posts
+                renderPosts(blogPosts);
+
+                // Add filter event listener
+                document.getElementById('category-filter').addEventListener('change', function() {
+                    const selectedCategory = this.value;
+                    const filteredPosts = selectedCategory === 'All' ? blogPosts : blogPosts.filter(post => post.category === selectedCategory);
+                    renderPosts(filteredPosts);
+                    hideFullPost(); // Hide full post when filtering
+                });
+
+                // Add navigation highlighting
+                const navLinks = document.querySelectorAll('.nav-menu a');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === 'blog.html') {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Add back link event
+                document.getElementById('back-link').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    hideFullPost();
+                });
+            }
+
+            function renderPosts(posts) {
+                const blogGrid = document.querySelector('.blog-grid');
+                blogGrid.innerHTML = ''; // Clear existing posts
+
+                posts.forEach(post => {
+                    const postDiv = document.createElement('div');
+                    postDiv.className = 'blog-post';
+                    postDiv.innerHTML = `
+                        <h3>${post.title}</h3>
+                        <p class="meta">Category: ${post.category} | Date: ${post.date}</p>
+                        <p class="excerpt">${post.excerpt}</p>
+                        <a href="#" class="read-more" data-post-id="${post.id}">Read More <i class="fas fa-arrow-right"></i></a>
+                    `;
+                    blogGrid.appendChild(postDiv);
+                });
+
+                // Add event listeners for "Read More" links
+                document.querySelectorAll('.read-more').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const postId = parseInt(this.getAttribute('data-post-id'));
+                        showFullPost(postId);
+                    });
+                });
+            }
+
+            function showFullPost(postId) {
+                const post = blogPosts.find(p => p.id === postId);
+                if (!post) return;
+
+                const postContent = document.getElementById('post-content');
+                const backLink = document.getElementById('back-link');
+                const blogGrid = document.querySelector('.blog-grid');
+
+                // Populate full post content
+                postContent.innerHTML = `
+                    <h2>${post.title}</h2>
+                    <p class="meta">Category: ${post.category} | Date: ${post.date}</p>
+                    <p>${post.content}</p>
+                `;
+
+                // Show full post and back link, hide blog grid
+                postContent.classList.add('active');
+                backLink.style.display = 'inline-flex';
+                blogGrid.style.display = 'none';
+
+                // Scroll to full post
+                postContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            function hideFullPost() {
+                const postContent = document.getElementById('post-content');
+                const backLink = document.getElementById('back-link');
+                const blogGrid = document.querySelector('.blog-grid');
+
+                // Hide full post and back link, show blog grid
+                postContent.classList.remove('active');
+                backLink.style.display = 'none';
+                blogGrid.style.display = 'grid';
+            }
+        });
+    </script>
 </body>
 </html>
